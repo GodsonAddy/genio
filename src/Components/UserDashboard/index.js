@@ -68,33 +68,33 @@ const StyledList = styled(List)({
 });
 
 const lists = [
-  { id: 0, key: "dashboard", label: "Dashboard", icon: GridViewIcon },
+  { id: 1, key: "/", label: "Dashboard", icon: GridViewIcon },
   {
-    id: 1,
+    id: 2,
     key: "wallet",
     label: "Wallet",
     icon: AccountBalanceWalletIcon,
   },
   {
-    id: 2,
+    id: 3,
     key: "cards",
     label: "Cards",
     icon: CreditCardIcon,
   },
   {
-    id: 3,
+    id: 4,
     key: "fxcentre",
     label: "FXCentre",
     icon: LocalAtmIcon,
   },
   {
-    id: 4,
+    id: 5,
     key: "beneficiaries",
     label: "Beneficiaries",
     icon: PeopleAltIcon,
   },
   {
-    id: 5,
+    id: 6,
     key: "perks",
     label: "Perks",
     icon: LocalOfferIcon,
@@ -104,7 +104,7 @@ const lists = [
 const drawerWidth = 300;
 
 function UserDashboard({ children, props }) {
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
   const history = useHistory();
 
   const handleListItemClick = (key, index) => {

@@ -17,7 +17,7 @@ function App() {
     <div className="vibes">
       <CssBaseline />
       <Switch>
-        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/" component={Dashboard} />
         <Route exact path="/wallet" component={Wallet } />
         <Route exact path="/perks" component={Perks} />
         <Route exact path="/beneficiaries" component={Beneficiaries} />

@@ -53,7 +53,7 @@ export default function ActivityTab() {
             <Tabs
                 value={value}
                 onChange={handleChange}
-                textColor="#000"
+                textColor="inherit"
                 indicatorColor="primary"
                 aria-label="secondary tabs example"
             >
