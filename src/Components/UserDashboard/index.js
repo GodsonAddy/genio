@@ -23,6 +23,7 @@ import {
   BrowserRouter,
   withRouter,
   useHistory,
+  useLocation,
 } from "react-router-dom";
 import GridViewIcon from "@mui/icons-material/GridView";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
@@ -71,31 +72,31 @@ const lists = [
   { id: 1, key: "/", label: "Dashboard", icon: GridViewIcon },
   {
     id: 2,
-    key: "wallet",
+    key: "/wallet",
     label: "Wallet",
     icon: AccountBalanceWalletIcon,
   },
   {
     id: 3,
-    key: "cards",
+    key: "/cards",
     label: "Cards",
     icon: CreditCardIcon,
   },
   {
     id: 4,
-    key: "fxcentre",
+    key: "/fxcentre",
     label: "FXCentre",
     icon: LocalAtmIcon,
   },
   {
     id: 5,
-    key: "beneficiaries",
+    key: "/beneficiaries",
     label: "Beneficiaries",
     icon: PeopleAltIcon,
   },
   {
     id: 6,
-    key: "perks",
+    key: "/perks",
     label: "Perks",
     icon: LocalOfferIcon,
   },
@@ -104,13 +105,9 @@ const lists = [
 const drawerWidth = 300;
 
 function UserDashboard({ children, props }) {
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  
   const history = useHistory();
-
-  const handleListItemClick = (key, index) => {
-    setSelectedIndex(index);
-    history.push(key);
-  };
+  const location = useLocation();
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -291,13 +288,13 @@ function UserDashboard({ children, props }) {
               mb: 8,
             }}
           >
-            {lists.map(({ label, icon: Icon, idx, key }, index) => (
+            {lists.map(({ label, icon: Icon, idx, key }) => (
               <ListItem
                 button
-                key={index}
+                key={idx}
                 color="#fff"
-                onClick={() => handleListItemClick(key, index)}
-                selected={selectedIndex === index}
+                onClick={() => history.push(key)}
+                selected={location.pathname === key}
 
               >
                 <ListItemIcon
