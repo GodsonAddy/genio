@@ -14,7 +14,8 @@ import {
   Button,
   Avatar,
   Stack,
-  Paper
+  Paper,
+  ListItemButton
 } from "@mui/material";
 import {
   BrowserRouter,
@@ -53,9 +54,11 @@ const StyledList = styled(List)({
   },
   // hover states
   "& .MuiListItemButton-root:hover": {
-    backgroundColor: "white",
+    backgroundColor:"#2b899d",
+    fontWeight: "bolder",
+    borderRadius: 5,
     "&, & .MuiListItemIcon-root": {
-      color: "#017189",
+      color: "white",
     },
   },
 });
@@ -202,8 +205,7 @@ function UserDashboard({ children }) {
             }}
           >
             {lists.map(({ label, icon: Icon, idx, key }) => (
-              <ListItem
-                button
+              <ListItemButton
                 key={idx}
                 color="#fff"
                 onClick={() => history.push(key)}
@@ -218,7 +220,7 @@ function UserDashboard({ children }) {
                   <Icon />
                 </ListItemIcon>
                 <ListItemText primary={label} />
-              </ListItem>
+              </ListItemButton>
             ))}
           </StyledList>
 

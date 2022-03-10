@@ -14,7 +14,7 @@ import Cards from "./Components/DrawerItems/Cards";
 
 function App() {
   return (
-    <div className="vibes">
+    <div>
       <CssBaseline />
       <Switch>
         <Route exact path="/" component={Dashboard} />
