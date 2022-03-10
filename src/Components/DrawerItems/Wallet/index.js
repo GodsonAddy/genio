@@ -50,7 +50,7 @@ export default function Wallet() {
 
             <Grid container display="flex" flexDirection="row" spacing={2}>
                 {/* Box 1 */}
-                <Grid item xs={5}>
+                <Grid item xs={12} sm={5}>
                     <Box component={Paper} spacing={2} padding={2} marginTop={2} variant="outlined">
                         <Grid container display="flex" flexDirection="column">
                             <Grid item>
@@ -90,7 +90,7 @@ export default function Wallet() {
                 </Grid>
 
                 {/* Box 2 */}
-                <Grid item xs={7}>
+                <Grid item xs={12} sm={7}>
 
                     <Box
                         component={Paper}

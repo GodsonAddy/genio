@@ -129,6 +129,7 @@ export default function Dashboard() {
                 display='flex'
                 justifyContent="center"
                 alignItems="center"
+
               >
                 <Fab
                   aria-label="add"
@@ -158,15 +159,17 @@ export default function Dashboard() {
               display="flex"
               direction="row"
               marginTop={4}
-              spacing={2}
+              spacing={1}
 
 
             >
               {lists.map(({ title, icon: Icon, id, color }) => (
-                <Grid item key={id} >
-                  <Paper
+                <Grid item key={id} xs={6} sm={2} style={{ display: "flex" }}>
+                  <Box
                     key={id}
                     variant="outlined"
+                    component={Paper}
+                    sx={{ width: 120 }}
                   >
                     <Grid
                       container
@@ -175,6 +178,7 @@ export default function Dashboard() {
                       padding={2}
                       justifyContent="center"
                       alignItems="center"
+                      spacing={1}
                     >
                       <Grid item marginTop={2}>
                         <Avatar sx={{ bgcolor: color }}> <Icon /> </Avatar>
@@ -184,7 +188,7 @@ export default function Dashboard() {
                       </Grid>
                     </Grid>
 
-                  </Paper>
+                  </Box>
                 </Grid>
               ))}
             </Grid>
@@ -238,7 +242,7 @@ export default function Dashboard() {
           alignItems="flex-end"
           marginTop={2}
         >
-          <Grid item>
+          <Grid item >
             <Grid
               container
               display="flex"
@@ -257,7 +261,7 @@ export default function Dashboard() {
             </Grid>
           </Grid>
 
-          <Grid item>
+          <Grid item >
             <Grid
               container
               display="flex"
@@ -275,7 +279,7 @@ export default function Dashboard() {
             </Grid>
           </Grid>
 
-          <Grid item>
+          <Grid item >
             <Grid
               container
               display="flex"

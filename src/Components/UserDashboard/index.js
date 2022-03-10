@@ -51,11 +51,7 @@ const StyledList = styled(List)({
   // selected and (selected + hover) states
   "&& .Mui-selected, && .Mui-selected:hover": {
     backgroundColor: "white",
-
-    fontWeight: "medium",
-    
-    paddingRight: 10,
-    paddingLeft: 10,
+    fontWeight: "bolder",
     borderRadius: 5,
 
     "&, & .MuiListItemIcon-root": {
@@ -207,8 +203,8 @@ function UserDashboard({ children, props }) {
           anchor="left"
         >
           <Toolbar>
-           
-            <img src={geniopay} alt="" color="inherit" width="200" height="50" />
+
+            <img src={geniopay} alt="" color="inherit" width="200" height="45" />
           </Toolbar>
 
           {/* Payin/Payout */}
