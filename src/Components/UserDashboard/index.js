@@ -4,7 +4,6 @@ import {
   Divider,
   Drawer,
   CssBaseline,
-  AppBar,
   Toolbar,
   List,
   ListItem,
@@ -15,9 +14,7 @@ import {
   Button,
   Avatar,
   Stack,
-  Paper,
-  InputAdornment,
-  IconButton,
+  Paper
 } from "@mui/material";
 import {
   BrowserRouter,
@@ -35,13 +32,9 @@ import StarRateIcon from "@mui/icons-material/StarRate";
 import { deepOrange, green, pink } from "@mui/material/colors";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import CampaignIcon from "@mui/icons-material/Campaign";
-import SearchIcon from "@mui/icons-material/Search";
-import ParkIcon from "@mui/icons-material/Park";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { HideOnScroll, StyledOutlinedInput } from "./util";
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import geniopay from '../../jpeg/geniopay.png';
+import MenuBar from './MenuBar';
 
 
 
@@ -103,7 +96,7 @@ const lists = [
 
 const drawerWidth = 300;
 
-function UserDashboard({ children, props }) {
+function UserDashboard({ children }) {
 
   const history = useHistory();
   const location = useLocation();
@@ -111,81 +104,8 @@ function UserDashboard({ children, props }) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <HideOnScroll {...props}>
-        <AppBar
 
-          sx={{
-            width: `calc(100% - ${drawerWidth}px)`,
-            ml: `${drawerWidth}px`,
-            bgcolor: "transparent",
-          }}
-          elevation={0}
-        >
-          <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              color="#000"
-              fontWeight="bolder"
-            >
-              Welcome, Huss Smith
-            </Typography>
-
-            <Box sx={{ flexGrow: 1 }} />
-
-            <StyledOutlinedInput
-              placeholder="Search"
-              startAdornment={
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              }
-            />
-            <Box
-              sx={{
-                display: "flex",
-                direction: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                mx: 2,
-              }}
-            >
-              <ParkIcon color="success" />
-              <Typography color="#000">0 planted</Typography>
-            </Box>
-
-            <IconButton aria-label="notification">
-              <NotificationsNoneOutlinedIcon sx={{ bgcolor: "white" }} />
-            </IconButton>
-
-            <Box
-              sx={{
-                display: "flex",
-                direction: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                mx: 2,
-              }}
-            >
-              <Avatar>HS</Avatar>
-
-              <Box sx={{ mx: 1 }}>
-                <Typography color="green">Verified</Typography>
-                <Typography sx={{ fontWeight: "bolder" }} color="#000">
-                  Huss Smith
-                </Typography>
-              </Box>
-
-              <IconButton>
-                <KeyboardArrowDownIcon color="#000" />
-              </IconButton>
-            </Box>
-          </Toolbar>
-
-
-        </AppBar>
-      </HideOnScroll>
+      <MenuBar />
 
       <BrowserRouter>
         <Drawer

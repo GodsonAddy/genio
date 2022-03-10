@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Tabs, Typography, Tab, Box, Grid, Avatar } from '@mui/material';
+import { Tabs, Typography, Tab, Box, Grid, Avatar, OutlinedInput } from '@mui/material';
 import PropTypes from 'prop-types';
 import euro from '../../../jpeg/euro.png';
 import usa from '../../../jpeg/flag.jpg';
@@ -9,8 +9,20 @@ import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
+import { styled } from "@mui/material/styles";
 
 
+
+export const StyledOutlinedInput = styled(OutlinedInput)(
+    ({ theme }) => `
+    width: 250px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 10px;
+    height: 40px
+    `
+  );
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
