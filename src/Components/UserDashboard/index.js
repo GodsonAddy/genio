@@ -41,6 +41,7 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { HideOnScroll, StyledOutlinedInput } from "./util";
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import geniopay from '../../jpeg/geniopay.png';
 
 
 
@@ -52,8 +53,10 @@ const StyledList = styled(List)({
     backgroundColor: "white",
 
     fontWeight: "medium",
-    px: 5,
-    borderRadius: 2,
+    
+    paddingRight: 10,
+    paddingLeft: 10,
+    borderRadius: 5,
 
     "&, & .MuiListItemIcon-root": {
       color: "#017189",
@@ -105,7 +108,7 @@ const lists = [
 const drawerWidth = 300;
 
 function UserDashboard({ children, props }) {
-  
+
   const history = useHistory();
   const location = useLocation();
 
@@ -204,9 +207,8 @@ function UserDashboard({ children, props }) {
           anchor="left"
         >
           <Toolbar>
-            <Typography variant="h6" color="white">
-              <b>Genio</b>Pay
-            </Typography>
+           
+            <img src={geniopay} alt="" color="inherit" width="200" height="50" />
           </Toolbar>
 
           {/* Payin/Payout */}
@@ -224,27 +226,20 @@ function UserDashboard({ children, props }) {
           >
             <List sx={{ width: "100%", maxWidth: 360, bgcolor: "transparent" }}>
               <ListItem>
-                <Stack
-                  direction="row"
-                  spacing={2}
-                  justifyContent="space-between"
-                  alignItems="flex-start"
-                >
-                  <ListItemAvatar>
-                    <Avatar sx={{ bgcolor: "#fff" }} variant="rounded">
-                      <AssignmentIcon sx={{ color: green[500] }} />
-                    </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary="Wallet Balance"
-                    secondary={<Typography>$15,001.00</Typography>}
-                  />
-                  <ListItemAvatar>
 
-                    <VisibilityOutlinedIcon />
+                <ListItemAvatar>
+                  <Avatar sx={{ bgcolor: "#fff" }} variant="rounded">
+                    <AssignmentIcon sx={{ color: green[500] }} />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary="Wallet Balance"
+                  secondary={<Typography>$15,001.00</Typography>}
+                />
 
-                  </ListItemAvatar>
-                </Stack>
+                <VisibilityOutlinedIcon sx={{ fontSize: 10 }} />
+
+
               </ListItem>
               <Divider component="li" sx={{ bgcolor: "white" }} />
               <ListItem>
@@ -286,6 +281,8 @@ function UserDashboard({ children, props }) {
               color: "white",
               mt: 4,
               mb: 8,
+              pl: 2,
+              pr: 2
             }}
           >
             {lists.map(({ label, icon: Icon, idx, key }) => (
